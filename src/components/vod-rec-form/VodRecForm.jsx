@@ -73,6 +73,7 @@ const VocRecForm = ({
     for (let i = startIndex; i <= endIndex; i++) {
       rows.push(
         <EventSlot
+          customClass="prev-vod-slot"
           key={i}
           name={`recommendation.${i}`}
           handleOpen={handleOpen}
@@ -92,13 +93,14 @@ const VocRecForm = ({
         enableReinitialize
       >
         {({ setFieldValue, values, resetForm }) => (
-          <Form>
+          <Form data-test="form-upsert-rec-vod">
             <Grid container spacing={1.5}>
               {/* The VOD is still editable (not in the past) or we are creating new one */}
               {((recId && !isExpired(values.startDateTime)) || !recId) && (
                 <>
                   <Grid item xs={4}>
                     <Select
+                      data-test="select-cluster"
                       name="cluster"
                       label="Cluster"
                       size="medium"
@@ -108,6 +110,7 @@ const VocRecForm = ({
 
                   <Grid item xs={4}>
                     <DateTimePicker
+                      data_test="select-date"
                       name="startDateTime"
                       label="Start Date"
                       disablePast
@@ -161,6 +164,7 @@ const VocRecForm = ({
                       type="submit"
                       variant="contained"
                       color="success"
+                      data-test="submit-upsert-btn"
                       loading={isSubmitting}
                     >
                       {recId ? 'Update' : 'Create'}
@@ -170,7 +174,12 @@ const VocRecForm = ({
               )}
             </Grid>
 
-            <Modal title="SEARCH VOD" open={open} handleClose={handleClose}>
+            <Modal
+              title="SEARCH VOD"
+              data_test="search-vod-modal"
+              open={open}
+              handleClose={handleClose}
+            >
               <SearchVodRec
                 addEvent={assignEventToSlot(setFieldValue)}
                 handleClose={handleClose}

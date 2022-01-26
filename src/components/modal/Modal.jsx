@@ -6,15 +6,20 @@ import ClearIcon from '@mui/icons-material/Clear';
 import ModalComp from '@mui/material/Modal';
 import { ModalHeader, ModalBody } from './Modal.styled';
 
-const Modal = ({ title, open, handleClose, children }) => {
+const Modal = ({ title, open, handleClose, children, data_test }) => {
   return (
-    <ModalComp open={open} onClose={handleClose} style={{ overflowY: 'auto' }}>
+    <ModalComp
+      open={open}
+      onClose={handleClose}
+      style={{ overflowY: 'auto' }}
+      data-test={data_test}
+    >
       <ModalBody>
         <ModalHeader>
           <Typography variant="h6" component="h6">
             {title}
           </Typography>
-          <IconButton onClick={handleClose}>
+          <IconButton data-test="close-modal-btn" onClick={handleClose}>
             <ClearIcon color="error" fontSize="medium" />
           </IconButton>
         </ModalHeader>
