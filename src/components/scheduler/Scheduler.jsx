@@ -82,11 +82,19 @@ const Scheduler = () => {
   const renderRecContent = (arg) => {
     return (
       <RecTooltipInfo
+        data-test-tooltip-id={arg.event.extendedProps.extraProps.id}
         title={arg.event.title}
         recommendation={arg.event.extendedProps.extraProps.recommendation}
         startDateTime={arg.event.start}
         endDateTime={arg.event.end}
       />
+    );
+  };
+
+  const renderEvent = (data) => {
+    data.el.setAttribute(
+      'data-testId',
+      'eventId-' + data.event.extendedProps.extraProps.id,
     );
   };
 
@@ -99,7 +107,7 @@ const Scheduler = () => {
           schedulerLicenseKey="CC-Attribution-NonCommercial-NoDerivatives"
           plugins={[resourceTimelinePlugin]}
           initialView="resourceTimelineMonth"
-          height="70vh"
+          height="700px"
           resourceAreaWidth="180px"
           resourceAreaHeaderContent="Clusters"
           resources={resources}
@@ -121,6 +129,7 @@ const Scheduler = () => {
           nowIndicator
           eventContent={renderRecContent}
           expandRows
+          eventDidMount={renderEvent}
           events={loadRec}
           eventClick={handleRecEdit}
           loading={handleRecLoading}

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useField, useFormikContext } from 'formik';
-import { isExpired, formatToHumanReadable } from '../../../utils/date';
+import { formatToHumanReadable } from '../../../utils/date';
 import {
   SlotWrapper,
   EventImageWrapper,
@@ -15,8 +15,9 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import ClearIcon from '@mui/icons-material/Clear';
+import { Tooltip } from '@material-ui/core';
 
-const EventSlot = ({ name, handleOpen, hd, disabled }) => {
+const EventSlot = ({ name, handleOpen, hd, disabled, customClass }) => {
   const [field, meta] = useField(name);
   const { setFieldValue } = useFormikContext();
   const { value } = field;
@@ -26,7 +27,7 @@ const EventSlot = ({ name, handleOpen, hd, disabled }) => {
   const handleOpenModal = () => handleOpen(name);
 
   return value && Object.keys(value).length !== 0 ? (
-    <SlotWrapper>
+    <SlotWrapper className={customClass} data-test={value.id}>
       <EventImageWrapper>
         {hd && <HD />}
         {!disabled && (
@@ -34,21 +35,29 @@ const EventSlot = ({ name, handleOpen, hd, disabled }) => {
             <ClearIcon color="error" fontSize="small" />
           </XButton>
         )}
-        {value.endProgram && isExpired(value.endProgram) && <Warning />}
+        {value.warningMessage && (
+          <Tooltip title={value.warningMessage}>
+            <Warning />
+          </Tooltip>
+        )}
         <EventImage />
       </EventImageWrapper>
-      <Typography noWrap sx={{ fontSize: '12px' }}>
+      <Typography data-test="event-title" noWrap sx={{ fontSize: '12px' }}>
         {value.title && <span>{<b>{value.title}</b>}</span>}
       </Typography>
-      <Typography noWrap sx={{ fontSize: '12px' }}>
+      <Typography
+        data-test="event-startProgram"
+        noWrap
+        sx={{ fontSize: '12px' }}
+      >
         {value.startProgram && formatToHumanReadable(value.startProgram)}
       </Typography>
-      <Typography noWrap sx={{ fontSize: '12px' }}>
+      <Typography data-test="event-endProgram" noWrap sx={{ fontSize: '12px' }}>
         {value.endProgram && formatToHumanReadable(value.endProgram)}
       </Typography>
     </SlotWrapper>
   ) : (
-    <SlotWrapper>
+    <SlotWrapper className="empity-slot">
       <EventImageWrapper error={meta && meta.touched && meta.error}>
         {hd && <HD />}
         <EmptyEventWrapper error={meta && meta.touched && meta.error}>
