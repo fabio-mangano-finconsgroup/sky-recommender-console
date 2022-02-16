@@ -11,6 +11,16 @@
 
 Fornire agli operatori SKY uno strumento che consenta la creazione di gruppi schedulati di raccomandazioni.
 
+### Termini ricorrenti
+
+- Utente: operatore SKY che crea e gestisce le raccomandazioni
+- Cluster: gruppo di utenti SKY che hanno sottoscritto una specifica offerta (CINEMA, NO_CINEMA)
+- Evento: titolo che andrà in onda
+- Tipologia Evento: lineare o vod (titolo on demand)
+- Raccomandazione: insieme di eventi della stessa tipologia
+- Raccomandazione lineare: insieme di eventi lineari, per cui è prevista una data di inizio e di fine
+- Raccomandazione vod: insieme di eventi vod, per cui è prevista una data di inizio
+
 ### Come funziona?
 
 L'operatore SKY dispone di un'interfaccia web che consente di:
@@ -31,7 +41,7 @@ L'operatore SKY dispone di un'interfaccia web che consente di:
 - editare raccomandazioni vod:
   - se schedulata in una data futura, sarà possibile editare tutti i campi;
 
-## Come eseguire il progetto
+## Come avviare il progetto
 
 ### Pre-requisiti
 
