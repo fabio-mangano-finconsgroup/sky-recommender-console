@@ -12,6 +12,10 @@ import Tab from '@mui/material/Tab';
 import { TabIcon, Warning } from './Home.styled';
 import useFallbackVodRec from '../../hooks/useFallbackVodRec';
 
+/**
+ * Component rendered when the user lands on the site homepage.
+ */
+
 const Home = () => {
   const [selectedTab, setSelectedTab] = React.useState(0);
   const [alertFallback, setAlertFallback] = React.useState(0);
