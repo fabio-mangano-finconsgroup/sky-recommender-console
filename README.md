@@ -9,12 +9,12 @@
 
 ### Scopo del progetto
 
-Fornire agli operatori SKY uno strumento che consenta la creazione di gruppi schedulati di raccomandazioni.
+Fornire agli editori SKY uno strumento che consenta la creazione di gruppi schedulati di raccomandazioni.
 
 ### Termini ricorrenti
 
-- Utente: operatore SKY che crea e gestisce le raccomandazioni
-- Cluster: gruppo di utenti SKY che hanno sottoscritto una specifica offerta (CINEMA, NO_CINEMA)
+- Utente: editore SKY che crea e gestisce le raccomandazioni
+- Cluster: gruppo di clienti SKY che hanno sottoscritto una specifica offerta (CINEMA, NO_CINEMA)
 - Evento: titolo che andrà in onda
 - Tipologia Evento: lineare o vod (titolo on demand)
 - Raccomandazione: insieme di eventi della stessa tipologia
@@ -23,7 +23,7 @@ Fornire agli operatori SKY uno strumento che consenta la creazione di gruppi sch
 
 ### Come funziona?
 
-L'operatore SKY dispone di un'interfaccia web che consente di:
+L'editore SKY dispone di un'interfaccia web che consente di:
 
 - visualizzare tutte le raccomandazioni all'interno di un un intervallo di giorni -7, +21 a partire dal giorno corrente
   - es: supponendo la data odierna sia 16/02/22, si visualizzeranno nello scheduler tutte le raccomandanzioni nell'intervallo 9/02 - 9/03
@@ -49,7 +49,7 @@ L'operatore SKY dispone di un'interfaccia web che consente di:
 
 ### Requisiti
 
-node >= v.16.13.0
+- node >= v.16.13.0
 
 ### Installazione dipendenze progetto
 
