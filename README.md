@@ -70,7 +70,7 @@ yarn
 #### backend
 
 ```
-json-server --watch db.json --port 3001 --delay 1000
+npm run apis
 ```
 
 #### frontend
@@ -91,13 +91,13 @@ npm test
 
 ```
 npm start
-yarn run cypress open
+npm test-e2e
 ```
 
 #### coverage
 
 ```
-yarn test --coverage .
+npm run coverage
 ```
 
 ## Come contribuire
