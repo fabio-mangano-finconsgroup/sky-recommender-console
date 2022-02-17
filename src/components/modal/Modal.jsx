@@ -6,6 +6,10 @@ import ClearIcon from '@mui/icons-material/Clear';
 import ModalComp from '@mui/material/Modal';
 import { ModalHeader, ModalBody } from './Modal.styled';
 
+/**
+ * Modal component
+ */
+
 const Modal = ({ title, open, handleClose, children, data_test }) => {
   return (
     <ModalComp
@@ -31,9 +35,21 @@ const Modal = ({ title, open, handleClose, children, data_test }) => {
 };
 
 Modal.propTypes = {
+  /**
+   * Text displayed in the modal header
+   */
   title: PropTypes.string.isRequired,
+  /**
+   * Show / hide the modal
+   */
   open: PropTypes.bool.isRequired,
+  /**
+   * Callback function to close the modal
+   */
   handleClose: PropTypes.func.isRequired,
+  /**
+   * The content to display in the modal
+   */
   children: PropTypes.node.isRequired,
 };
 

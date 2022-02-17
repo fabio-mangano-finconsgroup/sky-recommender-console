@@ -9,6 +9,10 @@ import useNotification from '../../hooks/useNotification';
 import VodRecFallbackForm from '../../components/vod-rec-fallback-form/VodRecFallbackForm';
 import useFallbackVodRec from '../../hooks/useFallbackVodRec';
 
+/**
+ * Container component that handle the logic to create / edit a fallback vod recommendation.
+ */
+
 const UpsertFallbackVodRec = ({ handleAlertFallback }) => {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const { data: fallbackVodRec, error: fallbackVodRecError } =

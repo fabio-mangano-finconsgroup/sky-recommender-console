@@ -4,6 +4,10 @@ import Box from '@mui/material/Box';
 import Scheduler from '../scheduler/Scheduler';
 import Marginer from '../marginer/Marginer';
 
+/**
+ * Component rendered in the schedule tab of the home.
+ */
+
 const Schedule = () => {
   return (
     <Container maxWidth="xl">

@@ -1,6 +1,10 @@
 import CellExpand from '../form/data-grid-table/CellExpand';
 import { formatToHumanReadable } from '../../utils/date';
 
+/**
+ * Config passed to the DataGridTable columns.
+ */
+
 export const columns = [
   { field: 'title', headerName: 'Title', width: '150', renderCell: CellExpand },
   {
@@ -30,6 +34,10 @@ export const columns = [
   { field: 'thumbnailType', headerName: 'Thumbnail Type', width: '180' },
   { field: 'verticalImageUrl', headerName: 'Vertical Image Url', width: '180' },
 ];
+
+/**
+ * Config passed to the form.
+ */
 
 export const initialValues = {
   selectedEvent: null,
