@@ -1,6 +1,4 @@
 import { render, waitFor, screen } from '@testing-library/react';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import * as useFallbackVodRec from '../../hooks/useFallbackVodRec';
 import Home from './Home';
 
@@ -29,11 +27,7 @@ describe('Home', () => {
       .spyOn(useFallbackVodRec, 'default')
       .mockImplementation(mockedUseFallbackVodRec);
 
-    render(
-      <LocalizationProvider dateAdapter={AdapterDateFns}>
-        <Home />
-      </LocalizationProvider>,
-    );
+    render(<Home />);
 
     expect(document.body.childNodes[0].children).toMatchSnapshot();
   });
@@ -59,11 +53,7 @@ describe('Home', () => {
         .spyOn(useFallbackVodRec, 'default')
         .mockImplementation(mockedUseFallbackVodRec);
 
-      render(
-        <LocalizationProvider dateAdapter={AdapterDateFns}>
-          <Home />
-        </LocalizationProvider>,
-      );
+      render(<Home />);
 
       await waitFor(() => {
         const warningIcon = screen.queryByTestId('warning-fallback');
@@ -91,11 +81,7 @@ describe('Home', () => {
         .spyOn(useFallbackVodRec, 'default')
         .mockImplementation(mockedUseFallbackVodRec);
 
-      render(
-        <LocalizationProvider dateAdapter={AdapterDateFns}>
-          <Home />
-        </LocalizationProvider>,
-      );
+      render(<Home />);
 
       await waitFor(() => {
         const warningIcon = screen.queryByTestId('warning-fallback');
@@ -123,11 +109,7 @@ describe('Home', () => {
         .spyOn(useFallbackVodRec, 'default')
         .mockImplementation(mockedUseFallbackVodRec);
 
-      render(
-        <LocalizationProvider dateAdapter={AdapterDateFns}>
-          <Home />
-        </LocalizationProvider>,
-      );
+      render(<Home />);
 
       await waitFor(() => {
         const warningIcon = screen.queryByTestId('warning-fallback');
@@ -154,11 +136,7 @@ describe('Home', () => {
         .spyOn(useFallbackVodRec, 'default')
         .mockImplementation(mockedUseFallbackVodRec);
 
-      render(
-        <LocalizationProvider dateAdapter={AdapterDateFns}>
-          <Home />
-        </LocalizationProvider>,
-      );
+      render(<Home />);
 
       await waitFor(() => {
         const warningIcon = screen.queryByTestId('warning-fallback');
