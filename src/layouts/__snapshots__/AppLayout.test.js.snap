@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppLayout should render 1`] = `
+HTMLCollection [
+  <div
+    data-testid="app-layout"
+  >
+    <header
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionStatic css-hip9hq-MuiPaper-root-MuiAppBar-root"
+      data-testid="app-bar"
+    >
+      <div
+        class="MuiContainer-root MuiContainer-maxWidthXl css-19r6kue-MuiContainer-root"
+      >
+        <div
+          class="MuiToolbar-root MuiToolbar-regular css-1cndkqf-MuiToolbar-root"
+        >
+          <div
+            class="MuiTypography-root MuiTypography-h6 css-2ulfj5-MuiTypography-root"
+          >
+            SKY Recommender Console
+          </div>
+        </div>
+      </div>
+    </header>
+    <div
+      class="MuiBox-root css-1c5ij41"
+    />
+    <div
+      class="MuiContainer-root MuiContainer-maxWidthXl css-19r6kue-MuiContainer-root"
+    >
+      <div>
+        Page
+      </div>
+    </div>
+  </div>,
+]
+`;
