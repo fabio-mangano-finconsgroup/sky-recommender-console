@@ -1,16 +1,13 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import CssBaseline from '@mui/material/CssBaseline';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import { AlertContextProvider } from '../notifications/AlertProvider';
+import AppLayout from '../layouts/AppLayout';
 import Notification from '../notifications/Notification';
 import Home from '../pages/home/Home';
+import NoMatch from '../pages/no-match/NoMatch';
 
 /**
  * The entry point component of the application.
@@ -21,10 +18,14 @@ const App = () => {
       <CssBaseline />
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <AlertContextProvider>
-          <Switch>
-            <Route exact from="/" component={Home} />
-            <Redirect from="*" to="/" />
-          </Switch>
+          <AppLayout>
+            <Switch>
+              <Route exact from="/" component={Home} />
+              <Route path="*">
+                <NoMatch />
+              </Route>
+            </Switch>
+          </AppLayout>
           <Notification />
         </AlertContextProvider>
       </LocalizationProvider>
