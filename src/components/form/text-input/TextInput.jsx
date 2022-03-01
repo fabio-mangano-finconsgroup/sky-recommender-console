@@ -25,8 +25,6 @@ const TextInput = ({ name, ...props }) => {
   return (
     <TextField
       variant="outlined"
-      size="small"
-      fullWidth
       onBlur={handleBlur}
       onChange={handleChange}
       {...props}

@@ -4,8 +4,8 @@ export const VocRecFormWrapper = styled.div`
   max-width: 100%;
   width: 700px;
   height: 100%;
-  maxheight: 600px;
-  paddingtop: 10px;
+  max-height: 600px;
+  padding-top: 10px;
 `;
 
 export const SlotsRowWrapper = styled.div`
